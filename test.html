@@ -1,2 +1,12 @@
-# GET /users/defunkt
-$ curl https://api.github.com/users/defunkt
+function getRank(){
+    console.log(this.responseText);
+    let response = JSON.parse(this.responseText);
+    console.log(response);
+    let data = response.global; 
+    console.log(data.rank.rankScore);
+  }
+
+  var xhr = new XMLHttpRequest();
+  xhr.addEventListener("load", getRank);
+  xhr.open("GET",'https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=MerrDawg&auth=qNJkbq7CmURHnQubqUDx%27);
+  xhr.send();
